@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instruções sobre o git</title>
+    <style>
+        :root{
+            --fonte_global:monospace;
+            --cor_background:#1E1E1E;
+            --cor_li:green;
+        }
+        *{
+            margin:0;
+            padding:0;
+        }
+
+        body{
+            background-color:var(--cor_background);
+        }
+     
+        #container{
+            width:90vw;
+            margin:auto;
+            margin-top:15px;
+            background-color:var(--cor_background);
+            color:red;
+        }
+
+        h2, p, li{
+           color:white;
+           font-family: var(--fonte_global);
+        }
+        
+        p, li{
+            margin-top:10px;
+        }
+
+        li{
+            font-weight: bold;
+            color:var(--cor_li);
+            list-style: none;
+        }
+
+        li > p{
+           font-weight: normal; 
+        }
+
+        .info{
+            margin:20px 0;
+            color:red;
+        }
+       
+        
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h2>Comandos básicos do Git na linha de comando</h2>
+        <ul>
+            <li>git init
+                <p>Cria um novo repositório .git</p>
+            </li>
+            <li>git config --global user.name <u>"nome-autor-versão"</u>
+                <p>Comando para criar um autor para a criação daquele commig. --global é para a criação em todos os repositórios da máquina. Quando não declarado, o usuário é criado apenas naquele repositório local.</p>
+            </li>
+            <li>git config --global user.email <u>"email-autor-versão"</u>
+                <p>Segue a mesma premissa para o do nome</p>
+            </li>
+            <li>git status
+                <p>Comando para verificar os arquivos e pastas que foram modificados e não salvos/commitados do repositório</p>
+            </li>
+            <li>git add <u>nome-arquivo</u> ou <u>.</u> ou <u>*</u> para salvar todos
+                <p>Comando para salvar (criar uma versão) os arquivos e pastas que foram modificados</p>
+            </li>
+            <li>git commit -m <u>"breve comentário sobre a nova versão"</u>
+                <p>Comenta (commit) o que foi alterado nesta nova versão. Como boa prática, deve-se fazer um
+                    commit sempre que o uma nova versão for criada.
+                </p>
+            </li>     
+            <li>git tag <u>"nome-tag"</u>
+                <p>Cria uma tag para aquela versão (commit)</p>
+            </li>
+            <li>git log
+                <p>Mostra todas as versões criadas, junto com os commits e a branch atual</p>
+            </li>
+            <li>git branch <u>"nome-branch"</u>
+                <p>Mostra todas as branchs criadas e em qual você está atualmente. Adicionando o nome depois, cria uma nova branch</p>
+            </li>
+            <li>git branch -d <u>nome-branch</u>
+                <p>Deleta a branch nomeada</p>
+            </li>
+            <li>git checkout <u>nome-tag</u>, <u>numero</u>, <u>nome-branch</u>
+                <p>Comando para navegar entre as commits e branch. Adicionando o nome de um arquivo ou pasta, apenas aquele arquivo ou pasta navega entre os commits ou branchs</p>
+            </li>
+            <li>git rm <u>nome-arquivo</u>
+                <p>Deleta o arquivo nomeado naquela commit</p>
+            </li>
+            <li>git diff
+                <p>Comando para mostrar as diferenças entre as versões. Deve ser feito depois de ter feito alguma alteração e antes de criar um novo commit.</p>
+            </li>
+            <li>git rm -rf <u>.git</u>
+                <p>Apaga a pasta .git do repositório. Deve-se ter muito cuidado ao realizar essa tarefa, pois apaga tudo o que nela continha (commits, versões, etc)</p>
+            </li>
+            <li>git merge 
+                <p>Junta duas ramificações em uma só. Ex: estou no branch master, então uso <u>git merge nome-branch</u> </p>
+            </li>
+            <li>git clone <u>endereço-web</u>
+                <p>Clona um repositório na web para um armazenamento local</p>
+            </li>
+            <li>git remote -v
+                <p>Mostra o endereço web daquele repositório (quando estiver disponível na web)</p>
+            </li>
+            <li>git push <u>nome-local + nome-branch</u>
+                <p>Atualiza repositório na web. Ex: <u>git push origin master</u></p>
+            </li>
+            <li>git pull
+                <p>Atualiza repositório local com o que está disponível na web</p>
+            </li>            
+        </ul>
+        <br>
+        <p class="info">Este arquivo foi criado para documentar minha evolução na utilização do git na linha de comando
+            além de praticar um pouco mais meu html e css.
+        </p>
+        <p class="info">Última atualização: 25/08/2021</p>
+    </div>
+    
+</body>
+</html>
